@@ -42,8 +42,26 @@ listG=["heraus","bringen","veröffentlichen",
     "an etw feilen",
     "etw schlüssig gestalten1","etw schlüssig gestalten2",
     "die Anspielung",
-    "vermeiden"
-    ]
+    "vermeiden",
+    "etwas mündlich übertragen",
+    "etwas nieder","etwas schreiben",
+    "seit Anbeginn der Zeiten",
+    "seit jeher",
+    "die Sprache",
+    "die Entwicklung",
+    "jm gefallen",
+    "jm missfallen",
+    "der Erfolg",
+    "reich",
+    "der Misserfolg","der Flop",
+    "kindgerecht","kindergerecht",
+    "für Kinder gedacht sein",
+    "für Kinder geeignet sein",
+    "eine Geschichte an etw./jn an/passen"
+    "die Zeit","die Epoche",
+    "der dramatische Ausgang","das tragische Ende",
+    "schrecklich","furchtbar,"
+    "furchterregend"]
 
 listF=["publier","publier","publier",
     "conquérir",
@@ -87,8 +105,26 @@ listF=["publier","publier","publier",
     "peaufiner qch",
     "organiser qch clairement","organiser qch de manière cohérent",
     "l'allusion",
-    "éviter"
-    ]
+    "éviter",
+    "transmettre qch oralement",
+    "coucher qch sur le papier", "retranscrire qch",
+    "depuis la nuit des temps",
+    "depuis toujours",
+    "la langue",
+    "l'évolution",
+    "plaire à qn",
+    "déplaire à qn",
+    "le succès erfolg",
+    "qui a du succès",
+    "l'échec", "le flop",
+    "adapté aux enfants", "conçu pour les enfants",
+    "être pensé pour les enfants",
+    "être adapté pour les enfants",
+    "adapter une histoire à qch/qn",
+    "l'époque", "le temps",
+    "l'issue dramatique", "la fin tragique",
+    "affreux", "terrible",
+    "effrayant"]
 
 class revision():
     
@@ -138,7 +174,6 @@ class revision():
 
             while not (self.lstG[self.z] in self.usedWords):
                 
-                print(self.usedWords)
                 
                 if self.rand == 0:
                     userAnswer = input(f"{self.lstG[self.z]} = ")
