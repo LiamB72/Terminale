@@ -17,18 +17,20 @@ def volumeSphere(r):
 
     return ((4/3) * pi) * (r ** 3)
 
+#((4/3) * pi) * (r ** 3)  <==>  (4* pi / 3) * (r ** 3)
+
 doctest.testmod()
 
 volumeSpheres = 0
 volumeCylinder = round(volumeRecipient(30, 58))
+wtarVolume = round(volumeRecipient(30, 50))
 
-for i in range(1,31):
-    if volumeSpheres < volumeCylinder:
-        volumeSpheres += round(volumeSphere(i))
-        print(volumeSpheres)
-    else:
-        print(f"Il faut {i-1} Sphères pour remplir le contenaire de {volumeCylinder}")
-        break
+i = 0
 
+while wtarVolume < volumeCylinder:
+    i += 1
+    volumeSpheres = round(volumeSphere(i))
+    wtarVolume += volumeSpheres
+    print(f"{i:3} Spheres Volume: {volumeSpheres:4}, waterVolume: {wtarVolume}")
 
-
+print(f"\nIl faut {i} Sphères pour remplir le contenaire de {volumeCylinder}")
