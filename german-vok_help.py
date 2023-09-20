@@ -63,56 +63,116 @@ wordsToLearn = {
     }
 }
 
-
 class revision():
     
-    def __init__(self, G_LIST, F_LIST):
-        self.lstG = G_LIST
-        self.lstF = F_LIST
-        
-        self.lenG = len(self.lstG)
-        self.lenF = len(self.lstF)
-
-        print(f"German: {self.lenG} words,\nFrench: {self.lenF} words")
-
-        self.z = 0
-        self.rand = 0
-
-        self.wordG = self.lstG[self.z]
-        self.wordF = self.lstF[self.z]
+    def __init__(self):
         
         self.restart = True
         
-        self.usedWords = []
-        
         while self.restart:
-            self.lenghtTraining = int(input("Combien de mots veux tu traduire : "))
-            self.lenghtTraining = abs(self.lenghtTraining)
+            
+            self.define_lists()
 
-            self.toGerman = input("Veux traduire du français à l'allemand? (Y/N) : ")
-            self.toGerman = self.toGerman.lower()
+            print(f"\n\nGerman: {self.lenG} words,\nFrench: {self.lenF} words")
+
+            if self.userInput == "r":
+                self.define_variables()
             
-            self.toGerman = True if self.toGerman == "y" else False
+            print("\n\n<<-------------------->>\n\n")
             
-            self.run()
+            if self.userInput == "r" :
+                self.run_revision()
+            if self.userInput == "t" :
+                self.run_translate()
             
             restartInput = input("Restart? (Y/N) : ")
 
             restartInput = restartInput.lower()
             if restartInput == "y":
                 self.restart = True
-                self.usedWords.clear()
+                if self.userInput == "r":
+                    self.usedWords.clear()
             else:
                 self.restart = False
 
-    def run(self):
-        for i in range(self.lenghtTraining):
-            self.z = randint(0, self.lenG)
-            self.rand = randint(0, 0)
+    def define_lists(self):
+        self.userInput = input("\nRevison (R) / translation (T) : ")
+        self.userInput = self.userInput.lower()
 
-            while not (self.lstG[self.z] in self.usedWords):
+        theme = input("\nMärchen Themed (M)\nAngst Themed (A)\nHeld - Vorbild - Eigenschaften Themed (HVE)\nChoice: ")
+        theme = theme.lower()
+
+        if theme == "m":
+            self.lstG = wordsToLearn["die Märchen"]["lstG"]
+            self.lstF = wordsToLearn["die Märchen"]["lstF"]
+        if theme == "a":
+            self.lstG = wordsToLearn["die Angst"]["lstG"]
+            self.lstF = wordsToLearn["die Angst"]["lstF"]
+        if theme == "hve":
+            self.lstG = wordsToLearn["HVE"]["lstG"]
+            self.lstF = wordsToLearn["HVE"]["lstF"]
+            
+        self.lenG = len(self.lstG)
+        self.lenF = len(self.lstF)
+
+    def define_variables(self):
+        self.z = 0
+        self.rand = 0
+        
+        self.wordG = self.lstG[self.z]
+        self.wordF = self.lstF[self.z]
+        
+        self.usedWords = []
+        
+        self.lenghtTraining = int(input("\nCombien de mots veux tu traduire : "))
+        self.lenghtTraining = abs(self.lenghtTraining)
+
+        self.toGerman = input("\nVeux traduire du français à l'allemand? (Y/N) : ")
+        self.toGerman = self.toGerman.lower()
+        
+        self.toGerman = True if self.toGerman == "y" else False
+
+    def run_revision(self):
+        if self.lenghtTraining <= self.lenG:
+            a = 0
+            while a <= self.lenghtTraining:
+                a += 1
+                self.z = randint(0, self.lenG-1)
+                if self.toGerman:
+                    self.rand = randint(0, 4)
+                else:
+                    self.rand = 0
+                    
+                #print(a, self.z)
+
+                if (self.lstG[self.z] in self.usedWords):
+                    self.lenghtTraining += 1
+
+                else: 
+                    if self.rand == 0:
+                        userAnswer = input(f"{self.lstG[self.z]} = ")
+                        if userAnswer == self.lstF[self.z]:
+                            print("Ya!\n")
+                        else:
+                            print(f"Nein! das ist {self.lstF[self.z]}\n") 
+
+                    elif self.rand == 1 and self.toGerman:
+                        userAnswer = input(f"{self.lstF[self.z]} = ")
+                        if userAnswer == self.lstG[self.z]:
+                            print("Oui!\n")
+                        else:
+                            print(f"Non! C'est {self.lstG[self.z]}\n")
                 
+                    self.usedWords.append(self.lstG[self.z])
                 
+        else:
+            for _ in range(self.lenghtTraining):
+                self.z = randint(0, self.lenG-1)
+                if self.toGerman:
+                    self.rand = randint(0, 4)
+                else:
+                    self.rand = 0
+                    
                 if self.rand == 0:
                     userAnswer = input(f"{self.lstG[self.z]} = ")
                     if userAnswer == self.lstF[self.z]:
@@ -126,40 +186,13 @@ class revision():
                         print("Oui!\n")
                     else:
                         print(f"Non! C'est {self.lstG[self.z]}\n")
-            
-                self.usedWords.append(self.lstG[self.z])
-            
-            else:
-                i -= 1
 
-
-class translationT_To_F():
-    
-    def __init__(self, lstG, lstF):
+    def run_translate(self):
         
-        self.lstG = lstG
-        self.lstF = lstF
-
-        self.lenG = len(self.lstG)
-        self.lenF = len(self.lstF)
+        for i in range(self.lenG):
+            print(f"\nGerman no.{i+1:2}: \"{self.lstG[i]}\"", end="")
         
-        self.restart = True
-        
-        while self.restart:
-            self.run()
-            
-            restartInput = input("Restart? (Y/N) : ")
-
-            restartInput = restartInput.lower()
-            if restartInput == "y":
-                self.restart = True
-                
-            else:
-                self.restart = False
-        
-    def run(self):
-        
-        userTranslate = input("German word : ")
+        userTranslate = input("\n\nGerman word : ")
         notFound = 0
         for i in range(self.lenG):
             
@@ -170,35 +203,7 @@ class translationT_To_F():
             
             notFound += 1
         if notFound > 1:
-            print("Word not found")
+            print("\nWord not found")
     
 
-while True:
-    userInput = input("Revison or translatinon? R/T : ")
-    userInput = userInput.lower()
-    
-    theme = input("Märchen Theme? (M)\nAngst Theme? (A)\nHeld - Vorbild - Eigenschaften Themes? (HVE) :\n")
-    theme = theme.lower()
-    
-    if theme == "m":
-        listG = wordsToLearn["die Märchen"]["lstG"]
-        listF = wordsToLearn["die Märchen"]["lstF"]
-    if theme == "a":
-        listG = wordsToLearn["die Angst"]["lstG"]
-        listF = wordsToLearn["die Angst"]["lstF"]
-    if theme == "hve":
-        listG = wordsToLearn["HVE"]["lstG"]
-        listF = wordsToLearn["HVE"]["lstF"]
-        
-    print(f"Theme Chosen : {theme},\nlstG : \n{listG}\n\nlstF : \n{listF}\n\n\n")
-    
-    
-    if userInput == "r":
-        revision(listG, listF)
-
-    elif userInput == "t":
-        translationT_To_F(listG, listF)
-        pass
-
-    else:
-        print(f"\nGot: {userInput} \n\nExpected: \"R\" or \"T\"\n")
+revision()
