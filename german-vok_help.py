@@ -1,130 +1,28 @@
 from random import randint
 
-listG=["heraus","bringen","veröffentlichen",
-    "erobern",
-    "wundersam",
-    "ungehorsam",
-    "frech",
-    "die wildesten Abenteuer",
-    "die Sammlung1","der Sammelband2",
-    "die Zehn Gebote","die 10 Gebote",
-    "das Lagerfeuer",
-    "die Weisheit",
-    "in grauen Vorzeiten",
-    "sie haben sich nicht auserzählt",
-    "die Ausgabe","die Auflage",
-    "der Einsatz", "das Engagement",
-    "die Märchendichter",
-    "fest", "halten",
-    "bewahren",
-    "der Anhang",
-    "die bearbeitung",
-    "rau",
-    "roh",
-    "der Zeitspiegel",
-    "der drastisch Ausgang1","der drastisch Ausgang2",
-    "der Teufel",
-    "glatt",
-    "kinderverträglich","kinderecht","kindergerecht",
-    "schlachten",
-    "etwas nach/spielen",
-    "das Messer",
-    "derweil","währenddessen",
-    "ertrinken",
-    "sich erhängen",
-    "untröstlich",
-    "die Trauer",
-    "klugerweise",
-    "drucken",
-    "eine deutchliche Umarbeitung",
-    "anzüglich1","anzüglich2",
-    "eingezogen sein1","eingezogen sein2",
-    "an etw feilen",
-    "etw schlüssig gestalten1","etw schlüssig gestalten2",
-    "die Anspielung",
-    "vermeiden",
-    "etwas mündlich übertragen",
-    "etwas nieder","etwas schreiben",
-    "seit Anbeginn der Zeiten",
-    "seit jeher",
-    "die Sprache",
-    "die Entwicklung",
-    "jm gefallen",
-    "jm missfallen",
-    "der Erfolg",
-    "reich",
-    "der Misserfolg","der Flop",
-    "kindgerecht","kindergerecht",
-    "für Kinder gedacht sein",
-    "für Kinder geeignet sein",
-    "eine Geschichte an etw./jn an/passen"
-    "die Zeit","die Epoche",
-    "der dramatische Ausgang","das tragische Ende",
-    "schrecklich","furchtbar,"
-    "furchterregend"]
+listG=["das Märchen", "die wundersame Geschichte", "die Erzählung (1)", "die Erzählung (2)", "eine Geschichte erzählen",
+       "das Kulturgut", "das Volk", "volkstümlich", "die Volkserzählung", "das Volksmärchen",
+       "der Zeitspiegel", "zeitgemäß", "ein zeitloses Motiv haben", "die Wirklichkeit wider", "der Realität entsprechen",
+       "der Zauber", "die Zauberwelt", "etw. zaubern", "das Vorlesen", "jm vor/lesen", "jm ein Märchen vor/lesen",
+       "der Ursprung ursprünglich", "früher", "heute", "heutzutage", "damals", "der Mund", "der Volksmund",
+       "etw. mündlich überliefern", "überliefert sein", "für Kinder gedacht sein", "für Kinder geeignet sein",
+       "der Erwachsene", "sich an Erwachsene richten", "das Ende", "gut enden", "die Moral",
+       "ein Märchen ist eine moralische Geschichte", "ein Märchen bringt eine ethische Lehre", "es hat einen pädagogischen Zweck",
+       "Grimms Märchen sind Erziehungsbücher", "die Botschaft", "eine Botschaft vermitteln", "die Wahrnehmung etw. wahr/nehmen",
+       "die Persönlichkeitsentwicklung", "die Emanzipation", "das Wert", "die Tugend", "die bestrafen", "die Bestrafung",
+       "jn bestrafen", "die Belohnung", "jn vor einer Gefahr retten", "jm das Leben retten", "die Veröffentlichung",
+       "veröffentlichen", "sammeln", "das Sammeln", "der Sammelband", "die Sammlung"]
 
-listF=["publier","publier","publier",
-    "conquérir",
-    "merveilleux",
-    "désobéissant",
-    "insolent",
-    "les aventures les plus folles",
-    "le recueil","le recueil",
-    "les dix commandements","les 10 commandements",
-    "le camp de feu",
-    "la sagesse",
-    "dans la nuit des temps",
-    "elles n'ont pas fini d'être racontées",
-    "l'édition", "l'édition",
-    "un engagement","un engagement",
-    "le conteur",
-    "consigner", "conserver",
-    "préserver",
-    "l'annexe",
-    "l'adaptation",
-    "rude",
-    "brut",
-    "le reflet de l'époque",
-    "l'issue radicale", "l'issue brutale",
-    "le diable",
-    "lisse",
-    "adapté aux enfants","adapté aux enfants","adapté aux enfants",
-    "abattre",
-    "imiter qch",
-    "le couteau",
-    "pendant ce temps","pendant ce temps",
-    "se noyer",
-    "se pendre",
-    "inconsolable",
-    "le chagrin",
-    "sagement",
-    "imprimer",
-    "un remaniement significatif",
-    "scabreux", "équivoque",
-    "faire son entrer", "faire son apparition",
-    "peaufiner qch",
-    "organiser qch clairement","organiser qch de manière cohérent",
-    "l'allusion",
-    "éviter",
-    "transmettre qch oralement",
-    "coucher qch sur le papier", "retranscrire qch",
-    "depuis la nuit des temps",
-    "depuis toujours",
-    "la langue",
-    "l'évolution",
-    "plaire à qn",
-    "déplaire à qn",
-    "le succès erfolg",
-    "qui a du succès",
-    "l'échec", "le flop",
-    "adapté aux enfants", "conçu pour les enfants",
-    "être pensé pour les enfants",
-    "être adapté pour les enfants",
-    "adapter une histoire à qch/qn",
-    "l'époque", "le temps",
-    "l'issue dramatique", "la fin tragique",
-    "affreux", "terrible",
-    "effrayant"]
+listF=["le conte", "l'histoire merveilleuse", "le récit", "l'histoire", "raconter une histoire",
+       "un élément du patrimoine culturel", "le peuple populaire", "traditionnel", "le récit populaire",
+       "le reflet de l'époque", "conforme à l'époque, contemporain", "avoir un thème intemporel", "refléter la réalité", "correspondre à la réalité",
+       "le sort", "le monde enchanté", "faire apparaître qch (comme) par magie", "la lecture", "faire la lecture à qn", "lire un conte à qn",
+       "l'origine au début", "autrefois", "aujourd'hui", "de nos jours", "à l'époque", "la bouche", "le langage populaire",
+       "transmettre qch oralement", "être transmis de génération en génération", "être pensé pour les enfants", "être adapté pour les enfants",
+       "l'adulte", "s'adresser aux adultes", "la fin", "bien finir", "la morale", "un conte est une histoire morale", "un conte apporte un enseignement éthique",
+       "il a un objectif pédagogique", "les contes de Grimm sont des livres d'éducation", "le message", "transmettre un message", "la perception, percevoir, comprendre qch",
+       "la perception, percevoir, comprendre qch", "le développement personnel", "l'émancipation", "la valeur", "la vertu", "la punition", "sanction",
+       "punir qn, sanctionner qn", "la récompense", "sauver qn d'un danger", "sauver la vie de qn", "la publication", "publier", "collecter", "la collecte", "le recueil", "la collection"]
 
 class revision():
     
@@ -193,6 +91,57 @@ class revision():
             
             else:
                 i -= 1
-                
-                    
-revision(listG, listF)
+
+
+class translationT_To_F():
+    
+    def __init__(self, lstG, lstF):
+        
+        self.lstG = lstG
+        self.lstF = lstF
+
+        self.lenG = len(self.lstG)
+        self.lenF = len(self.lstF)
+        
+        self.restart = True
+        
+        while self.restart:
+            self.translate()
+            
+            restartInput = input("Restart? (Y/N) : ")
+
+            restartInput = restartInput.lower()
+            if restartInput == "y":
+                self.restart = True
+                self.usedWords.clear()
+            else:
+                self.restart = False
+        
+    def translate(self):
+        
+        userTranslate = input("German word : ")
+        notFound = 0
+        for i in range(self.lenG):
+            
+            if userTranslate == self.lstG[i]:
+                notFound -= notFound
+                print(f"\n{userTranslate} = {self.lstF[i]}\n")
+                break
+            
+            notFound += 1
+        if notFound > 1:
+            print("Word not found")
+    
+while True:
+    userInput = input("Revison or translatinon? R/T : ")
+    
+    userInput = userInput.lower()
+    if userInput == "r":
+        revision(listG, listF)
+
+    elif userInput == "t":
+        translationT_To_F(listG, listF)
+        pass
+
+    else:
+        print(f"\nGot: {userInput} \n\nExpected: \"R\" or \"T\"\n")
