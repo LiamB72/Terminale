@@ -135,7 +135,7 @@ class revision():
     def run_revision(self):
         if self.lenghtTraining <= self.lenG:
             a = 0
-            while a <= self.lenghtTraining:
+            while a < self.lenghtTraining:
                 a += 1
                 self.z = randint(0, self.lenG-1)
                 if self.toGerman:
