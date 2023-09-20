@@ -25,7 +25,7 @@ wordsToLearn = {
                   "il a un objectif pédagogique", "les contes de Grimm sont des livres d'éducation", "le message", "transmettre un message", "la perception, percevoir, comprendre qch",
                   "la perception, percevoir, comprendre qch", "le développement personnel", "l'émancipation", "la valeur", "la vertu", "la punition", "sanction",
                   "punir qn, sanctionner qn", "la récompense", "sauver qn d'un danger", "sauver la vie de qn", "la publication", "publier", "collecter", "la collecte", "le recueil", "la collection"]
-                     },
+    },
     "die Angst" : {
         "lstG" :  ["die Angst", "etw. aus Angst machen", "Angst bekommen", "vor jm/etw. Angst haben", 
                    "sich vor jm/etw. ängstigen", "um jn Angst haben", "jm Angst machen", 
@@ -44,8 +44,23 @@ wordsToLearn = {
                   "le récit d'épouvante", "le film d'épouvante", 
                   "épouvantable", "frissonner", "frissonner d'épouvante", "donner le frisson à qn",
                   "le roman d'épouvante"]
+    },
+    "HVE" : {
+        "lstG": ["der Held", "die Heldin", "das Vorbild vorbildlich", "exemplarisch", "jm als Vorbild dienen", 
+		        "sich jn zum Vorbild nehmen", "das Mädchen nimmt sich ihre Mutter zum Vorbild", "eine Rolle nach/spielen", 
+		        "die Eigenschaft", "gute und schlechte Eigenschaften haben", "das Wert", "frech sein", "gehorsam", "ungehorsam", 
+		        "vorsichtig", "unvorsichtig", "die Weisheit weise sein", "die Klugheit klug sein", "lebensklug sein", "schlau", 
+		        "die Macht mächtig sein", "die Bosheit boshaft", "böse", "die Güte gut sein", "die Menschlichkeit menschlich sein", 
+		        "die Schönheit", "schön sein", "das Abenteuer", "abenteuerlustig sein", "der Mut", "mutig sein", "der Fleiß", "fleißig sein",
+		        "die Treue", "treu sein"],
+
+        "lstF": ["le héros", "la héroïne", "le modèle exemplaire", "le modèle exemplaire", "servir de modèle à qn", 
+	    	    "prendre qn pour modèle", "la fille prend modèle sur sa mère", "reproduire, rejouer un rôle après qn", 
+	    	    "le trait de caractère", "avoir des qualités et des défauts", "la valeur", "être insolent", "obéissant", "désobéissant", 
+	    	    "prudent", "imprudent", "la sagesse", "le bon sens", "avoir du bon sens", "astucieux, malin", "le pouvoir être puissant", 
+	    	    "la méchanceté", "méchant", "être bon", "l'humanité être humain", "la beauté", "être beau", "l'aventure", 
+	    	    "avoir le goût de l'aventure", "le courage", "courageux", "le zèle", "être travailleur", "la fidélité", "être fidèle"]
     }
-    
 }
 
 
@@ -162,7 +177,7 @@ while True:
     userInput = input("Revison or translatinon? R/T : ")
     userInput = userInput.lower()
     
-    theme = input("Märchen Theme? or Angst Theme? M/A : ")
+    theme = input("Märchen Theme? (M)\nAngst Theme? (A)\nHeld - Vorbild - Eigenschaften Themes? (HVE) :\n")
     theme = theme.lower()
     
     if theme == "m":
@@ -171,6 +186,9 @@ while True:
     if theme == "a":
         listG = wordsToLearn["die Angst"]["lstG"]
         listF = wordsToLearn["die Angst"]["lstF"]
+    if theme == "hve":
+        listG = wordsToLearn["HVE"]["lstG"]
+        listF = wordsToLearn["HVE"]["lstF"]
         
     print(f"Theme Chosen : {theme},\nlstG : \n{listG}\n\nlstF : \n{listF}\n\n\n")
     
