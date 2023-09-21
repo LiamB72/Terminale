@@ -1,6 +1,6 @@
 from random import randint
 
-wordsToLearn = {
+vocabulaire = {
     "die Märchen" : {
         "lstG" : ["das Märchen", "die wundersame Geschichte", "die Erzählung (1)", "die Erzählung (2)", "eine Geschichte erzählen",
                   "das Kulturgut", "das Volk", "volkstümlich", "die Volkserzählung", "das Volksmärchen",
@@ -16,13 +16,13 @@ wordsToLearn = {
                   "veröffentlichen", "sammeln", "das Sammeln", "der Sammelband", "die Sammlung"],
                      
         "lstF" : ["le conte", "l'histoire merveilleuse", "le récit", "l'histoire", "raconter une histoire",
-                  "un élément du patrimoine culturel", "le peuple populaire", "traditionnel", "le récit populaire",
-                  "le reflet de l'époque", "conforme à l'époque, contemporain", "avoir un thème intemporel", "refléter la réalité", "correspondre à la réalité",
+                  "un élément du patrimoine culturel", "le peuple," "populaire", "le récit populaire", "le conte populaire"
+                  "le reflet de l'époque", "conforme à l'époque", "avoir un thème intemporel", "refléter la réalité", "correspondre à la réalité",
                   "le sort", "le monde enchanté", "faire apparaître qch (comme) par magie", "la lecture", "faire la lecture à qn", "lire un conte à qn",
                   "l'origine au début", "autrefois", "aujourd'hui", "de nos jours", "à l'époque", "la bouche", "le langage populaire",
                   "transmettre qch oralement", "être transmis de génération en génération", "être pensé pour les enfants", "être adapté pour les enfants",
                   "l'adulte", "s'adresser aux adultes", "la fin", "bien finir", "la morale", "un conte est une histoire morale", "un conte apporte un enseignement éthique",
-                  "il a un objectif pédagogique", "les contes de Grimm sont des livres d'éducation", "le message", "transmettre un message", "la perception, percevoir, comprendre qch",
+                  "il a un objectif pédagogique", "les contes de Grimm sont des livres d'éducation", "le message", "transmettre un message", "la perception", "percevoir, comprendre qch",
                   "la perception, percevoir, comprendre qch", "le développement personnel", "l'émancipation", "la valeur", "la vertu", "la punition", "sanction",
                   "punir qn, sanctionner qn", "la récompense", "sauver qn d'un danger", "sauver la vie de qn", "la publication", "publier", "collecter", "la collecte", "le recueil", "la collection"]
     },
@@ -73,7 +73,7 @@ class revision():
             
             self.define_lists()
 
-            print(f"\n\nGerman: {self.lenG} words,\nFrench: {self.lenF} words")
+            print(f"\n\nAllemand: {self.lenG} mots,\nFrançais: {self.lenF} mots")
 
             if self.userInput == "r":
                 self.define_variables()
@@ -85,7 +85,7 @@ class revision():
             if self.userInput == "t" :
                 self.run_translate()
             
-            restartInput = input("Restart? (Y/N) : ")
+            restartInput = input("Recommencer? (Y/N) : ")
 
             restartInput = restartInput.lower()
             if restartInput == "y":
@@ -96,21 +96,21 @@ class revision():
                 self.restart = False
 
     def define_lists(self):
-        self.userInput = input("\nRevison (R) / translation (T) : ")
+        self.userInput = input("\nRevison (R) / Traduire (T) : ")
         self.userInput = self.userInput.lower()
 
         theme = input("\nMärchen Themed (M)\nAngst Themed (A)\nHeld - Vorbild - Eigenschaften Themed (HVE)\nChoice: ")
         theme = theme.lower()
 
         if theme == "m":
-            self.lstG = wordsToLearn["die Märchen"]["lstG"]
-            self.lstF = wordsToLearn["die Märchen"]["lstF"]
+            self.lstG = vocabulaire["die Märchen"]["lstG"]
+            self.lstF = vocabulaire["die Märchen"]["lstF"]
         if theme == "a":
-            self.lstG = wordsToLearn["die Angst"]["lstG"]
-            self.lstF = wordsToLearn["die Angst"]["lstF"]
+            self.lstG = vocabulaire["die Angst"]["lstG"]
+            self.lstF = vocabulaire["die Angst"]["lstF"]
         if theme == "hve":
-            self.lstG = wordsToLearn["HVE"]["lstG"]
-            self.lstF = wordsToLearn["HVE"]["lstF"]
+            self.lstG = vocabulaire["HVE"]["lstG"]
+            self.lstF = vocabulaire["HVE"]["lstF"]
             
         self.lenG = len(self.lstG)
         self.lenF = len(self.lstF)
@@ -152,9 +152,9 @@ class revision():
                     if self.rand == 0:
                         userAnswer = input(f"{self.lstG[self.z]} = ")
                         if userAnswer == self.lstF[self.z]:
-                            print("Ya!\n")
+                            print("Oui!\n")
                         else:
-                            print(f"Nein! das ist {self.lstF[self.z]}\n") 
+                            print(f"Non! C'est {self.lstF[self.z]}\n") 
 
                     elif self.rand == 1 and self.toGerman:
                         userAnswer = input(f"{self.lstF[self.z]} = ")
@@ -176,9 +176,9 @@ class revision():
                 if self.rand == 0:
                     userAnswer = input(f"{self.lstG[self.z]} = ")
                     if userAnswer == self.lstF[self.z]:
-                        print("Ya!\n")
+                        print("Oui!\n")
                     else:
-                        print(f"Nein! das ist {self.lstF[self.z]}\n") 
+                        print(f"Not! C'est {self.lstF[self.z]}\n") 
 
                 elif self.rand == 1 and self.toGerman:
                     userAnswer = input(f"{self.lstF[self.z]} = ")
@@ -190,9 +190,9 @@ class revision():
     def run_translate(self):
         
         for i in range(self.lenG):
-            print(f"\nGerman no.{i+1:2}: \"{self.lstG[i]}\"", end="")
+            print(f"\nMot Allemand numero {i+1:2}: \"{self.lstG[i]}\"", end="")
         
-        userTranslate = input("\n\nGerman word : ")
+        userTranslate = input("\n\nMot Allemand : ")
         notFound = 0
         for i in range(self.lenG):
             
@@ -203,7 +203,7 @@ class revision():
             
             notFound += 1
         if notFound > 1:
-            print("\nWord not found")
+            print("\nMot introuvable")
     
 
 revision()
