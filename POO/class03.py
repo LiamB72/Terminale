@@ -1,4 +1,4 @@
-class c():
+class rectangle():
 
     def __init__(self, l, h):
 
