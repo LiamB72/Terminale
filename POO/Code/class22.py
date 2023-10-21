@@ -22,6 +22,29 @@ class CompteBancaire:
 
         return f"Le compte de M./Mme. {self.nom} est de {self.sommeInitiale} €"
 
+#Q5
+class CompteCheque(CompteBancaire):
+    def __init__(self,nom,sommeInitiale,decouvert):
+        super().__init__(nom,sommeInitiale)
+        self.decouvertAutorise = decouvert
+        self.nom = nom
+        self.sommeInitiale = sommeInitiale
+
+    def changerDecouvert(self,nouveauDecouvert):
+
+        self.decouvertAutorise = nouveauDecouvert
+        return f"Nouveau decouvert: {self.decouvertAutorise}"
+
+    def debiter(self,montant):
+        print(montant, self.sommeInitiale, self.decouvertAutorise)
+        if (self.sommeInitiale - montant) > -self.decouvertAutorise:
+            
+            self.sommeInitiale -= montant
+            return True
+        else:
+            print(f"{montant}, {self.sommeInitiale}, {self.decouvertAutorise}\n{self.sommeInitiale - montant}")
+            return False
+        
 
 #Q2
 """
@@ -67,4 +90,14 @@ printAccounts(comptes)
 print("<<----------------------->>")
 debiteXArgent(20, comptes)
 printAccounts(comptes)
+"""
+#Q6
+"""
+compte=CompteCheque("dupond",100,50)
+compte.crediter(10)
+print(compte)
+print(compte.debiter(120))
+print(compte)
+print(compte.debiter(150))
+print(compte)
 """
