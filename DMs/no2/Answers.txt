@@ -1,0 +1,28 @@
+Exo 1
+
+
+1/ A) 192.168.128.131
+   B) 192.168.128.0 	Server IP 
+	  192.168.128.255 	Broadcast IP
+	  
+2/ A) Le routeur A est directement relier à B, C, et D.
+   B) 2-A.png
+   
+3/ débit    |  100 Kbps  |  500 Kbps  |  10 Mbps  |  100 Mbps  |
+   ---------+------------+------------+-----------+------------+
+   Métrique |    1000    |     200    |     10    |      1     |
+   
+4/ A) F -> H:5 -> J:1 -> K:2 -> I:5
+   Métrique = 13<15<16<20
+   
+   B) I: 13, J: 6, K: 7, L: 11
+   C) H, car il est le plus important dans toutes les communications.
+   
+Exo 2:
+
+1/ A) 192.168.1.0/24
+   B) 192.168.1.255/24
+   C) 254 hôtes possibles.
+   D) 192.168.1.69/24
+   
+2/ 
