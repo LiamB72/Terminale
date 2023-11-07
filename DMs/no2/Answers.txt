@@ -29,3 +29,5 @@ Exo 2:
 	  A-C-F-D
 	  A-C-E-D
 	  A-E-C-F-D
+	  A-B-C-F-D
+	  A-B-C-E-D
