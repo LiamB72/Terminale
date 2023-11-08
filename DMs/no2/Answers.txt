@@ -31,3 +31,123 @@ Exo 2:
 	  A-E-C-F-D
 	  A-B-C-F-D
 	  A-B-C-E-D
+
+   B) L'utilité d'avoir plusieurs routes vers un même routeur est pour assurer le trajet du message vers ce routueur.
+
+3/ Routeur A :
+
+Des + Passe Par +
+    |           |
+----+-----------+
+    |           |
+B   |  B        |
+    |           |
+----+-----------+
+    |           |
+C   |  C        |
+    |           |
+----+-----------+
+    |           |
+D   |  E        |
+    |           |
+----+-----------+
+    |           |
+E   |  E        |
+    |           |
+----+-----------+
+    |           |
+F   |  c        |
+    |           |
+----+-----------+
+
+4/ B - C - E - D
+
+Routeur A :
+
+Des + Passe Par +
+    |           |
+----+-----------+
+    |           |
+B   |  B        |
+    |           |
+----+-----------+
+    |           |
+C   |  C        |
+    |           |
+----+-----------+
+    |           |
+D   |  C        |
+    |           |
+----+-----------+
+    |           |
+E   |  C        |
+    |           |
+----+-----------+
+    |           |
+F   |  c        |
+    |           |
+----+-----------+
+
+Routeur B :
+
+Des + Passe Par +
+    |           |
+----+-----------+
+    |           |
+A   |  A        |
+    |           |
+----+-----------+
+    |           |
+C   |  A        |
+    |           |
+----+-----------+
+    |           |
+D   |  A        |
+    |           |
+----+-----------+
+    |           |
+E   |  A        |
+    |           |
+----+-----------+
+    |           |
+F   |  A        |
+    |           |
+----+-----------+
+
+Routeur C :
+
+Des + Passe Par +
+    |           |
+----+-----------+
+    |           |
+A   |  A        |
+    |           |
+----+-----------+
+    |           |
+B   |  A        |
+    |           |
+----+-----------+
+    |           |
+D   |  E        |
+    |           |
+----+-----------+
+    |           |
+E   |  E        |
+    |           |
+----+-----------+
+    |           |
+F   |  F        |
+    |           |
+----+-----------+
+
+4/ a) 10^8 / 10^7 = 10^8-7 = 10^1 = 10 : Ethernet
+   b) 10^8 / 10^8 = 1 : Fast-Ethernet
+   c) 10^8 / 10^9 = 0.1 : Fibre
+   d) A) A-E-D: Coût: 1.1
+         A-C-F-D Coût: 1.2
+         A-C-E-D Coût: 0.4
+         A-E-C-F-D Coût: 2.2
+         A-B-C-F-D Coût: 12.1
+         A-B-C-E-D Coût: 11.2
+
+   e) Le chemin emprunter par le paquet suivant le protocole OSPF est A-C-E-D avec un coût de 0.4 .
