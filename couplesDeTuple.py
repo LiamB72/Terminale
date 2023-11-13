@@ -1,4 +1,5 @@
 # Liam BERGE TG1 | Temps Pris: 29 mins
+# Mathématique Expertes
 
 n = int(input("n = "))
 
