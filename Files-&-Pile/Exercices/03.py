@@ -1,6 +1,7 @@
 from fileSansPrio import File
 from pileModule import Pile
 
+
 def inversionFile(f):
     p = Pile()
 
@@ -11,6 +12,7 @@ def inversionFile(f):
         f.enfiler(p.depiler())
 
     return f
+
 
 f = File()
 f.enfiler(5)

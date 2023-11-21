@@ -1,6 +1,7 @@
 from random import randint
 from fileSansPrio import File
 
+
 def extractionPaire(fileIn):
     fileOut = File()
 
@@ -8,10 +9,10 @@ def extractionPaire(fileIn):
 
         tempStr = str(element)
         if tempStr[-1] in ["0", "2", "4", "6", "8"]:
-
             fileOut.enfiler(element)
 
     return fileOut
+
 
 f = File()
 for n in range(0, 20):
