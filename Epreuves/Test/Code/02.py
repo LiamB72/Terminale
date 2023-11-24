@@ -2,22 +2,34 @@ def depouille(lst:list):
     
     d = {}
     
-    for element in range(len(lst)):
+    for element in lst:
         
-        d[element] = d[element] + 1
+        if element in d:
+            d[element] += 1
+        else:
+            d[element] = 1
+            
+    print(f"election: {d}")
+    return d
+
+
 def vainqueur(election):
     vainqueur = ''
     nmax = 0
-    for candidat in election:
-        if ... > ... :
-            nmax = ...
-            vainqueur = candidat
+    lst_Election = list(election.items())
+    for i in range(len(lst_Election)-1):
+        
+        if lst_Election[i][1] > lst_Election[i + 1][1]:
+            
+            vainqueur = lst_Election[i][0]
+            nmax = lst_Election[i][1]
+        
     
-    liste_finale = [nom for nom in election if election[nom] == ...]
-    return 
+    liste_finale = [nom for nom in election if election[nom] == nmax]
+    print(liste_finale)
+    return vainqueur
 
 Urne = ['A', 'A', 'A', 'B', 'C', 'B', 'C', 'B', 'C', 'B']
 
-election = depouille(Urne)
-# election {'B': 4, 'A': 3, 'C': 3}
+election = depouille(Urne) # election {'B': 4, 'A': 3, 'C': 3}
 vainqueur(election) # ['B']
