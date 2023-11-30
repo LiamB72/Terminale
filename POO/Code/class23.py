@@ -52,13 +52,12 @@ class CompteEpargne(CompteBancaire):
         self.sommeInitiale = sommeInitiale
         
     def calculerInteret(self):
-        
-        self.tauxInteret = self.tauxInteret/100
+        return self.solde * self.tauxInteret/100
         
     def crediterInteret(self):
         
         self.calculerInteret()
-        self.sommeInitiale += self.sommeInitiale * self.tauxInteret
+        self.sommeInitiale += self.calculerInteret()
         
     def changerTauxInteret(self, taux):
         
