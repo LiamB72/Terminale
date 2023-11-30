@@ -15,6 +15,6 @@ def inverse(string:str) -> str:
         return ""
     
     else:
-        return string[:-1] + inverse(string[5:])
+        return inverse(string[1:]) + string[0]
     
 print(inverse("hello"))
