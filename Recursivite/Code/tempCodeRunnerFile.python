@@ -1,6 +1,0 @@
-string = "Hello"
-string2 = ""
-for n in range(len(string)+1, 0, -1):
-    string2 = string[n:]
-    
-print(string2)
