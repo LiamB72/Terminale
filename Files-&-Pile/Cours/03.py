@@ -24,34 +24,26 @@ class Pile:
             return self.pile[-1]
 
 
-def checkParentheses(txt):
-    
-    checker = True
+def bien_parenthese(txt):
+    verificateur = True
     p = Pile()
-    index = 0
+    indice = 0
     
-    while checker and index < len(txt):
+    while verificateur==True and indice < len(txt):
         
-        if txt[index] == "(":
+        if txt[indice] == "(":
+            p.empiler(txt[indice])
             
-            p.empiler(txt[index])
-            
-        elif txt[index] == ")":
-            
+        elif txt[indice] == ")":
             if p.sommet() != "(":
-                
-                checker = False
-                
+                verificateur = False
             else:
                 p.depiler()
-                
-        index += 1
-        print(p)
-        
-        if p.estVide() == False:
             
-            checker = False
+        indice = indice+1
             
-    return checker
-    
-print(checkParentheses("(()"))
+    if p.estVide()==False:
+        verificateur = False
+    return True
+print(bien_parenthese("(3+2)+5*(2+8)"))
+print(bien_parenthese("(3+2)+5*(2+8"))
