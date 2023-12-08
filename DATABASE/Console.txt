@@ -1,0 +1,9 @@
+Within a MariaDB console:
+
+You gotta put ";" at the end of each sentence.
+
+use userlogin;
+show tables;
+drop table user;
+create table user(idUser int(10) auto_increment primary key not null, login varchar(25) not null unique, passwd varchar(50) not null, email varchar(255) not null);
+describe user;
