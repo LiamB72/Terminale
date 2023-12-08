@@ -26,20 +26,23 @@ def affiche(dessin):
 
 
 def zoomListe(liste_depart, k):
-    '''renvoie une liste contenant k fois chaque
-       élément de liste_depart'''
-    liste_zoom = ...
-    for elt in ... :
+    """renvoie une liste contenant k fois chaque
+       élément de liste_depart"""
+    liste_zoom = []
+    for elt in liste_depart :
         for i in range(k):
-            ...
+            liste_zoom.append("*")
     return liste_zoom
 
 def zoomDessin(grille, k):
-    '''renvoie une grille ou les lignes sont zoomées k fois
-       ET répétées k fois'''
+    """renvoie une grille ou les lignes sont zoomées k fois
+       ET répétées k fois"""
     grille_zoom=[]
     for elt in grille:
         liste_zoom = ...
         for i in range(k):
             ... .append(...)
     return grille_zoom
+
+affiche(coeur)
+affiche(zoomListe(coeur, 3))
