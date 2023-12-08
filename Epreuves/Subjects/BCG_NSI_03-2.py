@@ -13,8 +13,8 @@ coeur = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 
 def affiche(dessin):
     ''' affichage d'une grille : les 1 sont représentés par
-        des " *" , les 0 par deux espaces "  " 
-        La valeur "" donnée au paramètre end permet 
+        des " *" , les 0 par deux espaces "  "
+        La valeur "" donnée au paramètre end permet
         de ne pas avoir de  saut de ligne. '''
     for ligne in dessin:
         for col in ligne:
@@ -31,7 +31,7 @@ def zoomListe(liste_depart, k):
     liste_zoom = []
     for elt in liste_depart :
         for i in range(k):
-            liste_zoom.append("*")
+            liste_zoom.append(elt)
     return liste_zoom
 
 def zoomDessin(grille, k):
@@ -39,10 +39,9 @@ def zoomDessin(grille, k):
        ET répétées k fois"""
     grille_zoom=[]
     for elt in grille:
-        liste_zoom = ...
+        liste_zoom = zoomListe(elt, k)
         for i in range(k):
-            ... .append(...)
+            grille_zoom.append(liste_zoom)
     return grille_zoom
 
-affiche(coeur)
-affiche(zoomListe(coeur, 3))
+affiche(zoomDessin(coeur,3))
