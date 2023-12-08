@@ -2,7 +2,7 @@ from random import randint
 from fileSansPrio import File
 
 
-def extractionPaire(fileIn):
+def extractionPair(fileIn):
     fileOut = File()
 
     for element in fileIn:
@@ -18,4 +18,4 @@ for n in range(0, 20):
     f.enfiler(randint(10, 50))
 
 print(f)
-print(extractionPaire(f.file))
+print(extractionPair(f.file))
