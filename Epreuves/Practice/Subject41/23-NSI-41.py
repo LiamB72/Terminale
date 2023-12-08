@@ -27,7 +27,7 @@ def rendu_glouton(a_rendre:int, rang:int) -> list:
     if v <= a_rendre:
         return [v] + rendu_glouton(a_rendre - v, rang)
     else:
-        return rendu_glouton(a_rendre, rang - 1)
+        return rendu_glouton(a_rendre, rang + 1)
 
 
 print(rendu_glouton(67,  0))
