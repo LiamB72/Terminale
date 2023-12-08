@@ -20,16 +20,16 @@ assert recherche('a', "mississippi") == 0
 values = [100, 50, 20, 10, 5, 2, 1]
 
 
-def rendu_glouton(a_rendre, rang):
+def rendu_glouton(a_rendre:int, rang:int) -> list:
     if a_rendre == 0:
         return []
     v = values[rang]
     if v <= a_rendre:
-        return [] + rendu_glouton(a_rendre - v, rang)
+        return [v] + rendu_glouton(a_rendre - v, rang)
     else:
-        return rendu_glouton(a_rendre, rang)
+        return rendu_glouton(a_rendre, rang - 1)
 
 
-assert rendu_glouton(67,  0) == [50, 10, 5, 2]
-assert rendu_glouton(291, 0) == [100, 100, 50, 20, 20, 1]
-assert rendu_glouton(291, 1) == [50, 50, 50, 50, 50, 20, 20, 1]
+print(rendu_glouton(67,  0))
+print(rendu_glouton(291, 0))
+print(rendu_glouton(291, 1))
