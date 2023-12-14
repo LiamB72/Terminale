@@ -7,3 +7,23 @@ show tables;
 drop table user;
 create table user(idUser int(10) auto_increment primary key not null, login varchar(25) not null unique, passwd varchar(50) not null, email varchar(255) not null);
 describe user;
+insert into user(login, passwd, email) values('toto', '1234', 'toto@gmail.com');
+insert into user(login, passwd, email) values('nsi', '4560', 'nsi.touchard@gmail.com');
+select * from user;
+select login from user;
+select * from user where login='toto';
+select * from user where passwd='4560';
+insert into user(login, passwd, email) values('titi', '9875', 'titi@gmail.com');
+select * from user;
+select * from user where login like 't%'
+# the 't%' means it start by a 't' and the after we don't care.
+select * from user where login like '%i'
+# the '%i' means it ends by a 'i' and the before we don't care.
+update user set passwd=1111 where idUser=2;
+select * from user order by login;
+delete from user where login='titi';
+select * from user;
+select count(idUser) from user;
+select count(idUser) as idUser from user;
+select max(idUser) from user;
+select idUser from user where login='nsi' and passwd='1111'
