@@ -12,12 +12,12 @@ def depouille(urne):
 
 
 def vainqueur(election):
-    vainqueur = '' #
+    vainqueur = ''
     nmax = 0
     for candidat in election:
-        if election[candidat] > nmax :
+        if election[candidat] > nmax:
             nmax = election[candidat]
-            vainqueur = candidat #
+            vainqueur = candidat
     liste_finale = [nom for nom in election if election[nom] == nmax]
     return liste_finale
 

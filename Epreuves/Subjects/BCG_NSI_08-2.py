@@ -2,6 +2,7 @@ class Pile:
     """
     Classe definissant une structure de pile.
     """
+
     def __init__(self):
         self.contenu = []
 
@@ -28,13 +29,16 @@ class Pile:
 
 def eval_expression(tab):
     p = Pile()
-    for ... in tab:
-        if element != '+' ... element != '*':
-            p.empiler(...)
+    for element in tab:
+        if element != '+' or element != '*':
+            p.empiler(element)
         else:
-            if element == ...:
-                resultat = p.depiler() + ...
+            if element in ['+', '*']:
+                resultat = p.depiler() + p.depiler()
             else:
-                resultat = ...
-            p.empiler(...)
-    return ...
+                resultat = p.depiler()
+            p.empiler(resultat)
+    return p.contenu
+
+
+print((eval_expression([2, 3, '+', 5, '*'])))
