@@ -1,6 +1,6 @@
 from random import randint
 
-def lancer(n:int) -> list:
+def lancer(n):
     returnedList = []
     for i in range(n):
 

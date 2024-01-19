@@ -1,23 +1,13 @@
-def indices_maxi(lst: tuple):
-    maxNb = 0
+def indices_maxi(lst: list):
+    maxNb = lst[0]
     nbOccurrences = []
-    if len(lst) > 1:
-        for i in range(len(lst) - 1):
-            if lst[i] > lst[i + 1]:
-                maxNb = lst[i]
-
-        for i in range(len(lst)):
-            if maxNb == lst[i]:
-                nbOccurrences.append(i)
-
-    elif len(lst) <= 1:
-        for i in range(len(lst)):
+    for i in range(len(lst)):
+        if lst[i] > maxNb:
             maxNb = lst[i]
-            nbOccurrences = [i]
-            print((maxNb, nbOccurrences))
-            return maxNb, nbOccurrences
 
-    print((maxNb, nbOccurrences))
+    for j in range(len(lst)):
+        if lst[j] == maxNb:
+            nbOccurrences.append(j)
     return maxNb, nbOccurrences
 
 

@@ -2,14 +2,14 @@ def positif(pile):
     ogPile = list(pile)
     tempPile = []
     i = 0
-    while ogPile != []:
+    while ogPile:
 
         x = ogPile.pop()
 
         if x >= 0:
             tempPile.append(x)
 
-    while tempPile != []:
+    while tempPile:
         x = tempPile.pop()
         ogPile.append(x)
 

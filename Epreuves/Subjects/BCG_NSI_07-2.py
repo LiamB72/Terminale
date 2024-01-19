@@ -7,7 +7,7 @@ def traduire_romain(nombre):
     if len(nombre) == 1:
         return ...
 
-    elif romains[nombre[0]] >= ...:
-        return romains[nombre[0]] + ...
+    elif romains[nombre[0]] >= romains[nombre[1]]:
+        return romains[nombre[0]] + traduire_romain(nombre[1:])
     else:
-        return ...
+        return traduire_romain(nombre[1:]) - romains[nombre[0]]

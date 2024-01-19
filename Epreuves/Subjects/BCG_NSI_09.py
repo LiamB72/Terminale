@@ -1,14 +1,15 @@
-﻿# -*- coding: utf-8 -*-
+﻿def multiplication(a0, a1):
+    res = 0
+    if a0 > 0:
+        for i in range(a0):
+            res += a1
+    elif a0 < 0:
+        for i in range(a0, 0):
+            res -= a1
 
-def chercher(tab, n, i, j):
-    if i < 0 or j > len(tab):
-        return None
-    elif i > j:
-        return None
-    m = (i + j) // ...
-    if ... < n:
-        return chercher(tab, n, ..., ...)
-    elif ... > n:
-        return chercher(tab, n, ..., ...)
-    else:
-        return ...
+    return res
+
+print(multiplication(3, 5))
+print(multiplication(-4, -8))
+print(multiplication(-2, 6))
+print(multiplication(-2, 0))

@@ -5,9 +5,8 @@ def verifie(lst:list) -> bool:
             if lst[i] > lst[i + 1]:
                 return False
 
-        return True
-    else:
-        return True
+    return True
+
 
 print(verifie([0, 5, 8, 8, 9]))
 print(verifie([8, 12, 4]))

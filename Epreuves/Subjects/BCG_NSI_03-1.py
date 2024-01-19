@@ -2,7 +2,6 @@ def moyenne(lst: list):
     res = 0
     coef = 0
     for elements in lst:
-
         for i in range(2):
             res += elements[0] * elements[1]
             coef += elements[1]

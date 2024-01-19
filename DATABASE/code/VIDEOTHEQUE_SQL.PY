@@ -50,39 +50,47 @@ def choixGenre():
     print("3 : Policier")
     print("4 : Aventure")
     numeroGenre = input("\nVotre choix de film : ")
-    genre = 0
+    genreNB = 0
+    genre = ""
+
     match numeroGenre:
         case "1":
-            genre = 5
+            genreNB = 5
+            genre = "Science-fiction"
         case "2":
-            genre = 1
+            genreNB = 1
+            genre = "Comedie"
         case "3":
-            genre = 3
+            genreNB = 3
+            genre = "Policier"
         case '4':
-            genre = 7
-    return genre
+            genreNB = 7
+            genre = "Aventure"
+    return genreNB, genre
 
 # fonction requete Affichage de tous les films par ordre décroissant de durée
 def afficheFilmsDesc():
-    request = "SELECT titre, genreFilm, duree FROM film, genre WHERE film.idGenre=genre.idGenre ORDER BY duree DESC;"
+    request = "SELECT titre, genreFilm, duree FROM film NATURAL JOIN genre ORDER BY duree DESC;"
     selectRequete(request)
 
 
 # fonction requete Affichage des les films par genre
 def afficheFilmsGenre():
-    request = f"SELECT titre, genreFilm, duree FROM film, genre WHERE film.idGenre=genre.idGenre ORDER BY genreFilm DESC;"
+    genre = choixGenre()
+    request = f"SELECT titre, genreFilm, duree FROM film NATURAL JOIN genre WHERE genreFilm='{genre[1]}' ORDER BY genreFilm DESC;"
     selectRequete(request)
 
 # fonction requete Liste tous les films d’une durée supérieur à une valeur
 def afficheFilmsDuree():
     valeur = input("\ndurée minimale du film : ")
-    request = f"SELECT titre, genreFilm, duree FROM film, genre WHERE film.idGenre=genre.idGenre and duree>={valeur};"
+    request = f"SELECT titre, genreFilm, duree FROM film NATURAL JOIN genre WHERE duree>={valeur};"
     selectRequete(request)
 
 
 # fonction requete Comptabilise tous les films
 def comptabiliseFilms():
     request = "SELECT titre, genreFilm, duree FROM film, genre WHERE film.idGenre=genre.idGenre"
+
     selectRequete(request)
 
 
@@ -91,7 +99,7 @@ def ajouterFilms():
     titre = input("Votre titre de film : ")
     duree = int(input("La duree du film : "))
     genre = choixGenre()
-    request = f"INSERT INTO film(`idFilm`, `titre`, `duree`, `idGenre`) VALUES (NULL,'{str(titre)}','{str(duree)}','{str(genre)}');"
+    request = f"INSERT INTO film(`idFilm`, `titre`, `duree`, `idGenre`) VALUES (NULL,'{str(titre)}','{str(duree)}','{str(genre[0])}');"
     insertData(request)
 
 

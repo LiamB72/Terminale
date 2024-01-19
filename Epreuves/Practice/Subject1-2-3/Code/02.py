@@ -31,5 +31,5 @@ def vainqueur(election):
 
 Urne = ['A', 'A', 'A', 'B', 'C', 'B', 'C', 'B', 'C', 'B']
 
-election = depouille(Urne) # election {'B': 4, 'A': 3, 'C': 3}
+election = depouille(Urne) # a0 {'B': 4, 'A': 3, 'C': 3}
 vainqueur(election) # ['B']

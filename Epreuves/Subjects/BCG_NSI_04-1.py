@@ -1,17 +1,21 @@
-def a_doublon(lst:list) -> bool:
+def a_doublon(lst):
     check = 0
+
     if len(lst) > 1:
+
         for i in range(len(lst)):
             for j in range(len(lst)):
+
                 if lst[i] == lst[j]:
                     check+=1
+
             if check > 1:
                 return True
+
             else:
                 check = 0
-        return False
-    else:
-        return False
+
+    return False
 
 print(a_doublon([]))
 print(a_doublon([1]))
