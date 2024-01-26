@@ -1,4 +1,4 @@
-def verifie(lst:list) -> bool:
+def verifie(lst:list):
 
     if len(lst) > 1 :
         for i in range(len(lst)-1):

@@ -1,16 +1,4 @@
-def fusion(a0: list, a1: list) -> list:
-    """
-
-    Parameters
-    ----------
-    a0 = list nb.1
-    a1 = list nb.2
-
-    Returns
-    -------
-    Return a sorted list with every number of both lists
-    """
-    returnedList = []
+def fusion(a0: list, a1: list):
     for i in range(len(a1)):
         a0.append(a1.pop())
 

@@ -23,7 +23,7 @@ def selectRequete(requete):
 
     for rows in valuesList:
         for val in rows:
-            print(f"{val:35}", end='')
+            print(f"{val:<35}", end='')
         print()
 
     requestExecutor.close()
@@ -72,6 +72,7 @@ def choixGenre():
 def afficheFilmsDesc():
     request = "SELECT titre, genreFilm, duree FROM film NATURAL JOIN genre ORDER BY duree DESC;"
     selectRequete(request)
+
 
 
 # fonction requete Affichage des les films par genre

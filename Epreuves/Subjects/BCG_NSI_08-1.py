@@ -1,4 +1,4 @@
-def max_dico(d: dict) -> tuple:
+def max_dico(d: dict):
     maxLike = 0
     maxName = ""
     for name in d:

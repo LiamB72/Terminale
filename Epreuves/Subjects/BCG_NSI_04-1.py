@@ -1,4 +1,4 @@
-def a_doublon(lst):
+def a_doublon(lst: list):
     check = 0
 
     if len(lst) > 1:

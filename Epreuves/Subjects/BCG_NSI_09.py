@@ -1,4 +1,4 @@
-﻿def multiplication(a0, a1):
+﻿def multiplication(a0: int, a1: int):
     res = 0
     if a0 > 0:
         for i in range(a0):

@@ -1,4 +1,4 @@
-def recherche(a0: list, a1: int) -> int:
+def recherche(a0: list, a1: int)s:
     indexReturned = None
     for i in range(len(a0)):
         if a1 == a0[i]:
