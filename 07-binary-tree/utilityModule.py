@@ -61,6 +61,23 @@ def creerArbre():
 
     return arbre
 
+def creerBST():
+
+    arb = Node(10)
+    arb.left = Node(3)
+    arb.left.left = Node(1)
+    arb.left.right = Node(7)
+
+    arb.right = Node(20)
+    arb.right.left = Node(15)
+    arb.right.left.left = Node(11)
+    arb.right.left.right = Node(17)
+    arb.right.right = Node(25)
+    arb.right.right.left = Node(21)
+    arb.right.right.left.right = Node(24)
+
+    return arb
+
 def prefixPath(arbre):
     print(arbre.value, end=',')
     if arbre.left:

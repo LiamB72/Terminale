@@ -1,7 +1,7 @@
 from utilityModule import *
 
 def recherche(arb,cle):
-    if arb:
+    if not arb:
         return False
     x = arb.value
     if cle == x:
