@@ -9,9 +9,9 @@ def cryptage(message, clef):
         cryptedLetter = chr(cryptedValue)
         res += cryptedLetter
 
-        if i < 4:
+        if i < len(clef):
             i += 1
-        if i >= 4:
+        if i >= len(clef):
             i = 0
 
     return res
